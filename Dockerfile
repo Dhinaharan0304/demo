@@ -6,4 +6,4 @@ run maven clean package
 from tomcat:9.0.65-jdk18
 copy --from=build /home/ubuntu/project/*.war /usr/local/tomacwebapps/
 expose 8080
-cmd["catalina.sh", "run"]
+CMD ["catalina.sh", "run"]
