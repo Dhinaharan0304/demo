@@ -5,6 +5,6 @@ COPY ./src ./src
 RUN mvn clean package 
 RUN ls -la /home/ubuntu/project/target
 FROM tomcat:latest
-COPY --from=build /home/ubuntu/project/target/*.jar /usr/local/tomcat/webapps/
+COPY --from=build /home/ubuntu/project/target/*.war /usr/local/tomcat/webapps/
 EXPOSE 8081
 CMD ["catalina.sh", "run"]
